@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import categories from "./utils/categories";
+import "./style.scss";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="categories ">
+      <div className="wrapper container">
+        {categories.map(({ title, id, img }) => (
+          <div key={id} className="category">
+            <div
+              className="background-image"
+              style={{
+                backgroundImage: `url(${img})`,
+              }}
+            />
+            <div className="info">
+              <h2 className="title">{title}</h2>
+              <p className="subtitle">Shop now</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
