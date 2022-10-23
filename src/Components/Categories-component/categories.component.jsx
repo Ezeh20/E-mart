@@ -1,15 +1,14 @@
 import Category from "../Category-component/category.component";
 import categories from "../../utils/categories";
-import './categories.scss'
+import "./categories.scss";
 
 const Categories = () => {
- 
   return (
-    <div className="categories ">
+    <div className="categories">
       <div className="wrapper container">
-        {categories.map((categories) => (
-          <Category key={categories.id} category={categories} />
-        ))}
+        {categories.map((cat) => {
+          return <Category category={cat} />;
+        })}
       </div>
     </div>
   );

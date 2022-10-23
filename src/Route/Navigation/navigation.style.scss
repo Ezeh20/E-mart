@@ -1,0 +1,49 @@
+.nav-header {
+    width: 100%;
+    background-color: #ddd;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    height: 5rem;
+    padding: 3.5rem 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    .nav-body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            column-gap: 1.5rem;
+
+            .link {
+                font-size: 1.1rem;
+                color: #666;
+                font-weight: 600;
+
+                &:hover {
+                    color: #888;
+                }
+            }
+        }
+    }
+
+}
+
+.container-two {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    max-width: 1650px;
+}
+
+.logo-svg {
+    width: 3.5rem;
+    height: 3.5rem;
+}
