@@ -3,7 +3,7 @@ import "./category.scss";
 const Category = (props) => {
   const { img, title } = props.category;
   return (
-    <div className="category ">
+    <div  className="category ">
       <div
         className="background-image"
         style={{

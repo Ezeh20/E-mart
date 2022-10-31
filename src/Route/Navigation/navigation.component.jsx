@@ -6,6 +6,7 @@ import { ReactComponent as Icon } from "../../asset/user.svg";
 import "./navigation.style.scss";
 
 const Navigation = () => {
+  
   return (
     <Fragment>
       <div className="nav-header">
