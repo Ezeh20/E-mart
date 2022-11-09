@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom";
 import { signInWithGooglePopup, storeAuthUsers } from "../../utils/firebase/firebase.utils.js";
-import SignUp from "../../Components/Sign-up-component/sign-up-component.jsx";
+import "./sign-in.style.scss"
 
 const Signin = () => {
   const login = async () => {
@@ -11,7 +12,8 @@ const Signin = () => {
     <div>
       <h1 >sign-in</h1>
       <button onClick={login} >Sign-in</button>
-      <SignUp />
+      <h1>Don't have an account ?</h1>
+      <Link className="sign-up" to="/sign-up">Sign up</Link>
     </div>
   );
 };
