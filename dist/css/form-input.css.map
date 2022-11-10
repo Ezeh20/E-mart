@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAA;EACJ,KAAK,EAAE,IAAI;EACX,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,aAAa,EAAE,MAAM;EACrB,eAAe,EAAE,MAAM;CAQ1B;;AAbD,AAOI,QAPI,CAOJ,kBAAkB,CAAA;EACd,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,OAAO,EAAE,KAAK;EACd,KAAK,EAAE,GAAG;CACb",
+    "sources": [
+        "../../src/Components/Form-input-component/form-input.scss"
+    ],
+    "names": [],
+    "file": "form-input.css"
+}

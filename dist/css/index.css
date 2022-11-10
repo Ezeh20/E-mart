@@ -1,0 +1,33 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1440px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.container-three {
+  max-width: 560px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+/*********************************************************************************/
+@media screen and (min-width: 500px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.inp {
+  margin-bottom: 2rem;
+}
+/*# sourceMappingURL=index.css.map */

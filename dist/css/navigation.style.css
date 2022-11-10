@@ -1,0 +1,67 @@
+.nav-header {
+  width: 100%;
+  background-color: #ddd;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 5rem;
+  padding: 3.5rem 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  overflow-x: hidden;
+}
+
+.nav-header .nav-body {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav-header .nav-body .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 1.5rem;
+          column-gap: 1.5rem;
+}
+
+.nav-header .nav-body .nav-links .link {
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 600;
+}
+
+.nav-header .nav-body .nav-links .link:hover {
+  color: #888;
+}
+
+.container-two {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  max-width: 1650px;
+}
+
+.logo-svg {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+/*# sourceMappingURL=navigation.style.css.map */

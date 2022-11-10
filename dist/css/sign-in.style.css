@@ -1,0 +1,13 @@
+.sign-up {
+  padding: .3rem;
+  text-align: center;
+  border: 1px solid #999;
+}
+
+.sign-up .input {
+  padding: .5rem;
+  border: none;
+  border-bottom: 1px solid #000;
+  outline: none;
+}
+/*# sourceMappingURL=sign-in.style.css.map */

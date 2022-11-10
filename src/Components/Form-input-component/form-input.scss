@@ -1,0 +1,14 @@
+.sign_up{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    
+    .sign_up_container{
+        display: flex;
+        flex-direction: column;
+        row-gap: .5rem;
+        width: 100%;
+    }
+}
