@@ -19,3 +19,7 @@ code {
   box-sizing: border-box;
   
 }
+
+input[type='password']{
+  letter-spacing: .3rem;
+}

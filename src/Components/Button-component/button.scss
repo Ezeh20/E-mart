@@ -1,0 +1,30 @@
+.btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    color: #555;
+    border: none;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        border: none;
+        background-color: #000;
+        color: #eee;
+    }
+
+    &.google-sign-in {
+        background-color: rgb(119, 137, 238);
+        color: #fff;
+
+        &:hover {
+            background-color: rgb(153, 166, 240);
+            
+        }
+    }
+    &.redirect{
+        width: 100%;
+        padding: 1rem 2.5rem;
+    }
+}
