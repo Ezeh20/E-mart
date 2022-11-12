@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/E-mart/static/css/main.ba7463c8.css",
-    "main.js": "/E-mart/static/js/main.dd137f23.js",
+    "main.css": "/E-mart/static/css/main.b28af234.css",
+    "main.js": "/E-mart/static/js/main.a524e6b5.js",
     "static/js/787.e7d37915.chunk.js": "/E-mart/static/js/787.e7d37915.chunk.js",
     "static/media/children.jpg": "/E-mart/static/media/children.6bd90694ebbf6cc07048.jpg",
     "static/media/men.jpg": "/E-mart/static/media/men.c1b0aa5ba5f89e6ee9d0.jpg",
@@ -12,12 +12,12 @@
     "static/media/shopping-bag-3753.svg": "/E-mart/static/media/shopping-bag-3753.ccceb2444bb3dc2cde7692218af8933e.svg",
     "index.html": "/E-mart/index.html",
     "static/media/user.svg": "/E-mart/static/media/user.0a3f6d3e92a5ba9f9d9a60625a1c2a81.svg",
-    "main.ba7463c8.css.map": "/E-mart/static/css/main.ba7463c8.css.map",
-    "main.dd137f23.js.map": "/E-mart/static/js/main.dd137f23.js.map",
+    "main.b28af234.css.map": "/E-mart/static/css/main.b28af234.css.map",
+    "main.a524e6b5.js.map": "/E-mart/static/js/main.a524e6b5.js.map",
     "787.e7d37915.chunk.js.map": "/E-mart/static/js/787.e7d37915.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ba7463c8.css",
-    "static/js/main.dd137f23.js"
+    "static/css/main.b28af234.css",
+    "static/js/main.a524e6b5.js"
   ]
 }
