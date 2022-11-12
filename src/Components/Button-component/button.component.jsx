@@ -7,9 +7,9 @@ const Button_Class = {
     redirect: "redirect"
 }
 
-const Button = ({ children, buttonType }) => {
+const Button = ({ children, buttonType, otherProps }) => {
     return (
-        <button className={`btn ${Button_Class[buttonType]}`}>{children}</button>
+        <button className={`btn ${Button_Class[buttonType]}`} {...otherProps}>{children}</button>
     )
 }
 

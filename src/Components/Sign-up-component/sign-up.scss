@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
-    margin: 8rem 0;
+    margin: 5rem 0;
     align-items: center;
     justify-items: center;
 
@@ -18,10 +18,18 @@
         flex-direction: column;
         row-gap: 3.5rem;
         width: 80%;
-        padding:4.5rem 4rem 4rem;
+        padding:4.5rem 2.5rem 4rem;
         border-radius: 5px;
         background-color: #fff;
     }
 
     
+}
+
+@media screen and (min-width: 560px) {
+    .up{
+        .form{
+            padding: 4.5rem 4rem 4rem;
+        }
+    }
 }
