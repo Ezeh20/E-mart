@@ -17,7 +17,7 @@ const Signin = () => {
     <div className="sign_in up">
       <div className="split container-three">
         <h2 className="title">Sign - in</h2>
-        <button className="goo" onClick={login} >Sign - in with google</button>
+        <Button className="goo" onClick={login} buttonType={`google`} >Sign - in with google</Button>
         <div className="spin">
           <span className="or">OR</span>
           <div className="line"></div>
@@ -41,8 +41,7 @@ const Signin = () => {
           className: 'form-input'
         }} />
         <div className="log">
-          <Button type="submit">Sign - in</Button>
-
+          <Button type="submit" buttonType={`primary`} >Sign - in</Button>
         </div>
         <div className="other">
           <p className="text">Don't have an account ?</p>

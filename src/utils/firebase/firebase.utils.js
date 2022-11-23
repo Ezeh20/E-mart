@@ -14,7 +14,6 @@ import { initializeApp } from "firebase/app";
 
 import {
   getAuth,
-  signInWithPopup,
   signInWithRedirect,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
@@ -43,7 +42,7 @@ provider.setCustomParameters({
 });
 
 export const auth = getAuth(firebaseApp);
-export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+export const signInWithGooglePopup = () => signInWithRedirect(auth, provider);
 
 //Create an instance of firestore
 

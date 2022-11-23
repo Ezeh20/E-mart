@@ -15,16 +15,35 @@
     }
 
     &.google-sign-in {
-        background-color: rgb(119, 137, 238);
+        background-color: #000;
         color: #fff;
 
         &:hover {
-            background-color: rgb(153, 166, 240);
-        
+            background-color: rgb(65, 91, 236);
+
         }
     }
-    &.redirect{
+
+    &.redirect {
         width: 100%;
         padding: 1rem 2.5rem;
+        background-color: #000;
+        color: #fff;
+
+        &:hover {
+            color: #000;
+            background-color: #fff;
+            border: 1px solid #000;
+            color: #000;
+        }
+    }
+
+    &.primary-btn {
+        border: 1px solid #999;
+        background-color: #fff;
+
+        &:hover {
+            background-color: #000;
+        }
     }
 }
