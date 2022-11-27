@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { createUserWithEmailAndPass, storeAuthUsers } from '../../utils/firebase/firebase.utils.js'
-import FormInput from "../Form-input-component/form-input.jsx";
-import Button from "../Button-component/button.component.jsx";
+import { createUserWithEmailAndPass, storeAuthUsers } from '../../../utils/firebase/firebase.utils.js'
+import FormInput from "../../../Components/Form-input-component/form-input.jsx";
+import Button from "../../../Components/Button-component/button.component.jsx";
 import "./sign-up.scss"
 
 
 const SignUp = () => {
-
+    //Set the original input of the form
     const defaultForm = {
         displayName: '',
         email: '',
@@ -14,9 +14,12 @@ const SignUp = () => {
         comfirmPassword: ''
     }
 
+    //let the formDefault state hold the original input values
     const [formDefault, setFormDefault] = useState(defaultForm)
+    //destucture elements needed from the formDefault state
     const { displayName, email, password, comfirmPassword } = formDefault
 
+    //onChange ? setFormDefault based on the input value matched by the form name 
     const handleChange = event => {
         const { name, value } = event.target
         setFormDefault({ ...formDefault, [name]: value })
@@ -39,14 +42,13 @@ const SignUp = () => {
 
         } catch (err) {
             if (err.code === 'auth/email-already-in-use') {
-                alert('error')
+                alert('Email already exits')
             } else {
-                console.log("failed", err)
+                console.log('error')
             }
         }
     }
 
-    console.log(defaultForm)
     return (
         <div className="up">
             <h2 className="title">Sign - up</h2>
