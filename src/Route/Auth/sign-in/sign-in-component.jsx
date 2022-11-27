@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { signInWithGooglePopup, storeAuthUsers, signInUserWithEmailAndPass } from "../../../utils/firebase/firebase.utils.js";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UserContext } from "../../../Context/context.jsx";
 import FormInput from "../../../Components/Form-input-component/form-input.jsx";
 import Button from "../../../Components/Button-component/button.component.jsx";
 import "./sign-in.scss"
@@ -22,13 +23,16 @@ const Signin = () => {
     const { name, value } = event.target
     setFormDefault({ ...formDefault, [name]: value })
   }
+  //import the userContext to get access to the setter function
+  const { setCurrentUser } = useContext(UserContext)
 
   const onSubmit = async event => {
-    event.preventDefault()
-
+    event.preventDefault();
     try {
-      const response = await signInUserWithEmailAndPass(email, password)
-      console.log(response)
+      //get the user after auth the pass it to the setter function so that the current
+      //user state can be updated 
+      const { user } = await signInUserWithEmailAndPass(email, password)
+      setCurrentUser(user)
     } catch (error) {
       if (error.code === "auth/wrong-password") {
         alert("wrong email or password")

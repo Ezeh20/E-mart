@@ -1,12 +1,16 @@
 import { Outlet, Link } from "react-router-dom";
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import { ReactComponent as MartLogo } from "../../asset/shopping-bag-3753.svg";
 import { ReactComponent as Icon } from "../../asset/user.svg";
+import { UserContext } from "../../Context/context";
 
 import "./navigation.style.scss";
 
 const Navigation = () => {
-  
+  //get access to the currentUser state which may be updated at any time
+  const { currentUser } = useContext(UserContext)
+  console.log(currentUser)
+
   return (
     <Fragment>
       <div className="nav-header">
