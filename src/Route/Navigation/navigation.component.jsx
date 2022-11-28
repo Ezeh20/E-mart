@@ -3,13 +3,19 @@ import { Fragment, useContext } from "react";
 import { ReactComponent as MartLogo } from "../../asset/shopping-bag-3753.svg";
 import { ReactComponent as Icon } from "../../asset/user.svg";
 import { UserContext } from "../../Context/context";
+import { SignOut } from "../../utils/firebase/firebase.utils";
 
 import "./navigation.style.scss";
 
 const Navigation = () => {
   //get access to the currentUser state which may be updated at any time
-  const { currentUser } = useContext(UserContext)
+  const { currentUser, setCurrentUser } = useContext(UserContext)
   console.log(currentUser)
+
+  const onClick = async () => {
+    await SignOut()
+    setCurrentUser(null)
+  }
 
   return (
     <Fragment>
@@ -25,9 +31,11 @@ const Navigation = () => {
             <Link className="link" to="/contact">
               CONTACT
             </Link>
-            <Link className="link" to="/signin">
-              SIGN IN
-            </Link>
+            {
+              currentUser ? (<span className="link" onClick={onClick}>SIGN OUT</span>) : (<Link className="link" to="/signin">
+                SIGN IN
+              </Link>)
+            }
             <Link className="link" to="/sign-up">
               <Icon />
             </Link>

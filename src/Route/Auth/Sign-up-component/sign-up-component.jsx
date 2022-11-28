@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { createUserWithEmailAndPass, storeAuthUsers } from '../../../utils/firebase/firebase.utils.js'
+import { useContext } from "react";
+import { UserContext } from "../../../Context/context.jsx";
 import FormInput from "../../../Components/Form-input-component/form-input.jsx";
 import Button from "../../../Components/Button-component/button.component.jsx";
 import "./sign-up.scss"
@@ -29,6 +31,8 @@ const SignUp = () => {
         setFormDefault(defaultForm)
     }
 
+    const { setCurrentUser } = useContext(UserContext)
+
     const handleSubmit = async (event) => {
         event.preventDefault()
         if (password !== comfirmPassword) {
@@ -38,6 +42,7 @@ const SignUp = () => {
         try {
             const { user } = await createUserWithEmailAndPass(email, password);
             await storeAuthUsers(user, { displayName });
+            setCurrentUser(user)
             clear();
 
         } catch (err) {

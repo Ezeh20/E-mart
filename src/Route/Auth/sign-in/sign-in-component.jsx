@@ -15,6 +15,7 @@ const Signin = () => {
   }
   //let the formDefault state hold the original input values
   const [formDefault, setFormDefault] = useState(form)
+
   //destucture elements needed from the formDefault state
   const { email, password } = formDefault;
 
@@ -26,6 +27,11 @@ const Signin = () => {
   //import the userContext to get access to the setter function
   const { setCurrentUser } = useContext(UserContext)
 
+  //clear form input
+  const clear = () => {
+    setFormDefault(form)
+  }
+
   const onSubmit = async event => {
     event.preventDefault();
     try {
@@ -33,11 +39,17 @@ const Signin = () => {
       //user state can be updated 
       const { user } = await signInUserWithEmailAndPass(email, password)
       setCurrentUser(user)
-    } catch (error) {
-      if (error.code === "auth/wrong-password") {
-        alert("wrong email or password")
-      } else {
-        return
+      clear()
+    }
+    catch (error) {
+      switch (error.code) {
+        case "auth/wrong-password":
+          alert("wrong email or password");
+          break;
+        case "auth/user-not-found":
+          alert("wrong email or password");
+          break;
+        default: console.log(error)
       }
     }
   }
