@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { signInWithGooglePopup, storeAuthUsers, signInUserWithEmailAndPass } from "../../../utils/firebase/firebase.utils.js";
-import { useState, useContext } from "react";
-import { UserContext } from "../../../Context/context.jsx";
+import { signInWithGooglePopup, signInUserWithEmailAndPass } from "../../../utils/firebase/firebase.utils.js";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import FormInput from "../../../Components/Form-input-component/form-input.jsx";
 import Button from "../../../Components/Button-component/button.component.jsx";
 import "./sign-in.scss"
@@ -13,6 +13,7 @@ const Signin = () => {
     email: "",
     password: ""
   }
+  const navigate = useNavigate()
   //let the formDefault state hold the original input values
   const [formDefault, setFormDefault] = useState(form)
 
@@ -25,7 +26,6 @@ const Signin = () => {
     setFormDefault({ ...formDefault, [name]: value })
   }
   //import the userContext to get access to the setter function
-  const { setCurrentUser } = useContext(UserContext)
 
   //clear form input
   const clear = () => {
@@ -33,12 +33,13 @@ const Signin = () => {
   }
 
   const onSubmit = async event => {
+   
     event.preventDefault();
     try {
       //get the user after auth the pass it to the setter function so that the current
       //user state can be updated 
-      const { user } = await signInUserWithEmailAndPass(email, password)
-      setCurrentUser(user)
+      await signInUserWithEmailAndPass(email, password)
+      navigate("/")
       clear()
     }
     catch (error) {
@@ -55,8 +56,7 @@ const Signin = () => {
   }
 
   const login = async () => {
-    const { user } = await signInWithGooglePopup();
-    storeAuthUsers(user)
+    await signInWithGooglePopup();
   };
 
   return (

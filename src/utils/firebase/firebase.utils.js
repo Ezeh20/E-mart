@@ -19,6 +19,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
 
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
@@ -90,3 +91,14 @@ export const signInUserWithEmailAndPass = async (email, password) => {
 };
 
 export const SignOut = async () => await signOut(auth);
+
+/**
+ * This will be our auth observer, it monitors user's auth flow if the user signs in or out,
+ * It updates our current user's state
+ * it takes the auth and a callback, the callback runs when the observer changes the user's state
+ * doing this will help isolate most of our setCurrentUser function in one location as oppose to
+ * calling the setter function everytime
+ */
+
+export const onAuthChangeListener = (callback) =>
+  onAuthStateChanged(auth, callback);

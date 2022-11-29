@@ -9,13 +9,7 @@ import "./navigation.style.scss";
 
 const Navigation = () => {
   //get access to the currentUser state which may be updated at any time
-  const { currentUser, setCurrentUser } = useContext(UserContext)
-  console.log(currentUser)
-
-  const onClick = async () => {
-    await SignOut()
-    setCurrentUser(null)
-  }
+  const { currentUser } = useContext(UserContext)
 
   return (
     <Fragment>
@@ -32,11 +26,11 @@ const Navigation = () => {
               CONTACT
             </Link>
             {
-              currentUser ? (<span className="link" onClick={onClick}>SIGN OUT</span>) : (<Link className="link" to="/signin">
+              currentUser ? (<span className="link" onClick={SignOut}>SIGN OUT</span>) : (<Link className="link" to="/signin">
                 SIGN IN
               </Link>)
             }
-            <Link className="link" to="/sign-up">
+            <Link className="link">
               <Icon />
             </Link>
           </div>

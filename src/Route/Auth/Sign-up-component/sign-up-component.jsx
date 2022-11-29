@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { createUserWithEmailAndPass, storeAuthUsers } from '../../../utils/firebase/firebase.utils.js'
-import { useContext } from "react";
-import { UserContext } from "../../../Context/context.jsx";
+import { useNavigate } from "react-router-dom";
 import FormInput from "../../../Components/Form-input-component/form-input.jsx";
 import Button from "../../../Components/Button-component/button.component.jsx";
 import "./sign-up.scss"
@@ -16,6 +15,7 @@ const SignUp = () => {
         comfirmPassword: ''
     }
 
+    const navigate = useNavigate()
     //let the formDefault state hold the original input values
     const [formDefault, setFormDefault] = useState(defaultForm)
     //destucture elements needed from the formDefault state
@@ -31,7 +31,6 @@ const SignUp = () => {
         setFormDefault(defaultForm)
     }
 
-    const { setCurrentUser } = useContext(UserContext)
 
     const handleSubmit = async (event) => {
         event.preventDefault()
@@ -41,8 +40,8 @@ const SignUp = () => {
         }
         try {
             const { user } = await createUserWithEmailAndPass(email, password);
+            navigate("/")
             await storeAuthUsers(user, { displayName });
-            setCurrentUser(user)
             clear();
 
         } catch (err) {
