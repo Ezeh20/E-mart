@@ -2,7 +2,7 @@ import { Outlet, Link } from "react-router-dom";
 import { Fragment, useContext } from "react";
 import { ReactComponent as MartLogo } from "../../asset/shopping-bag-3753.svg";
 import { ReactComponent as Icon } from "../../asset/user.svg";
-import { UserContext } from "../../Context/context";
+import { UserContext } from "../../Context/user.context";
 import { SignOut } from "../../utils/firebase/firebase.utils";
 
 import "./navigation.style.scss";

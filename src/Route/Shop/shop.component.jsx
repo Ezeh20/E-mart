@@ -1,4 +1,4 @@
-
+import './shop.scss'
 
 const Shop = () => {
 

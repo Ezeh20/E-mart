@@ -1,40 +1,33 @@
-import men from "./images/men.jpg"
-import women from './images/women.jpeg'
-import children from './images/children.jpg'
-import hats from './images/hats.jpg'
-import sneakers from './images/sneakers.jpg'
-import glasses from './images/glasses.jpg'
-
 const categories = [
   {
     id: 1,
     title: "Men",
-    img: men,
+    img: "https://yourimageshare.com/ib/8SgOCc9U3t.webp",
   },
   {
     id: 2,
     title: "Women",
-    img: women,
+    img: "https://yourimageshare.com/ib/RuSirq9lYG.webp",
   },
   {
     id: 3,
     title: "Kids",
-    img: children,
+    img: "https://yourimageshare.com/ib/4gg6SOqVWZ.webp",
   },
   {
     id: 4,
     title: "Hats",
-    img: hats,
+    img: "https://yourimageshare.com/ib/RuSirq9lYG.webp",
   },
   {
     id: 5,
     title: "Sneakers",
-    img: sneakers,
+    img: "https://yourimageshare.com/ib/uuxrZ30NKt.webp",
   },
   {
     id: 6,
     title: "Glasses",
-    img: glasses,
+    img: "https://yourimageshare.com/ib/JZ5kEJDHLl.webp",
   },
 ];
 
