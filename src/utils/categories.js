@@ -7,7 +7,7 @@ const categories = [
   {
     id: 2,
     title: "Women",
-    img: "https://yourimageshare.com/ib/RuSirq9lYG.webp",
+    img: "https://yourimageshare.com/ib/UPzgTf9Ytu.webp",
   },
   {
     id: 3,
