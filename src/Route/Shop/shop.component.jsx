@@ -9,13 +9,13 @@ const Shop = () => {
   const { product } = useContext(ProductContext)
   return (
     <div className="Shop">
-      <h1>Shop</h1>
-      {
-        product.map(items => { return (<Products key={items.id} product={items} />) })
-      }
-
+      <h1 className="title">Shop</h1>
+      <div className="products-container container">
+          {
+            product.map(pro => { return (<Products key={pro.id} product={pro} />) })
+          }
+      </div>
     </div>
-
   )
 };
 

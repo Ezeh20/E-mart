@@ -16,9 +16,9 @@ export const UserProvider = ({ children }) => {
     //observer 
     useEffect(() => {
         const unsubscribe = onAuthChangeListener((user) => {
-            if (user) {
+            if(user){
                 storeAuthUsers(user)
-            } setCurrentUser(user)
+            }setCurrentUser(user)
         })
         return unsubscribe
     }, [])

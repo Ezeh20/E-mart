@@ -1,4 +1,18 @@
 .Shop{
-    display: grid;
-    
+    min-height: 100vh;
+    .title{
+        text-align: center;
+        margin: 1rem 0;
+    }
+    .products-container{
+        display: flex;
+        overflow: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        column-gap: 1.5rem;
+        padding: 1rem;
+        &::-webkit-scrollbar{
+            display: none;
+        }
+    }
 }

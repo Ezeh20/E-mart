@@ -40,7 +40,7 @@ const Signin = () => {
       //user state can be updated 
       await signInUserWithEmailAndPass(email, password)
       navigate("/")
-      clear()
+      clear() 
     }
     catch (error) {
       switch (error.code) {

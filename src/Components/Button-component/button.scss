@@ -46,4 +46,17 @@
             background-color: #000;
         }
     }
+
+    &.cart {
+        border: 1px solid #999;
+        background-color: #fff;
+        width: max-content;
+        align-self: center;
+        padding: .5rem 1rem;
+
+        &:hover {
+            background-color: #000;
+            border: 1px solid #000;
+        }
+    }
 }

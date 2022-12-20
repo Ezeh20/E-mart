@@ -1,0 +1,30 @@
+.product-card {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 1rem ;
+    box-shadow: .1rem .1rem .9rem .1rem rgb(223, 222, 222);
+
+    .product-img {
+       width: 200px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 5px 5px 0 0;
+
+        @media screen and (min-width : 1024px) {
+            height: 210px;
+        }
+    }
+    .product_details{
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    .cart{
+        background-color: red;
+        position: absolute;
+        bottom: 25%;
+    }
+}

@@ -4,7 +4,8 @@ import './button.scss'
 const Button_Class = {
     google: "google-sign-in",
     primary: "primary-btn",
-    redirect: "redirect"
+    redirect: "redirect",
+    addToCart:"cart"
 }
 
 const Button = ({ children, buttonType, otherProps, onClick, link }) => {
