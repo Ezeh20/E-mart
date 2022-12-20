@@ -9,7 +9,7 @@
 
     .product-img {
        width: 200px;
-        height: 150px;
+        height: 170px;
         object-fit: cover;
         border-radius: 5px 5px 0 0;
 
@@ -25,6 +25,9 @@
     .cart{
         background-color: red;
         position: absolute;
-        bottom: 25%;
+        bottom: 30%;
+        @media screen and (min-width:1024px) {
+            bottom: 25%;
+        }
     }
 }
