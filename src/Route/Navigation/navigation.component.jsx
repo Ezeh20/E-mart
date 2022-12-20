@@ -1,7 +1,7 @@
 import { Outlet, Link } from "react-router-dom";
 import { Fragment, useContext } from "react";
-import { ReactComponent as MartLogo } from "../../asset/shopping-bag-3753.svg";
-import { ReactComponent as Icon } from "../../asset/user.svg";
+import { TfiShoppingCartFull } from "react-icons/tfi"
+import { MdOutlineShoppingBag } from "react-icons/md"
 import { UserContext } from "../../Context/user.context";
 import { SignOut } from "../../utils/firebase/firebase.utils";
 
@@ -17,8 +17,9 @@ const Navigation = () => {
       <div className="nav-header">
         <div className="nav-body container-two">
           <Link className="logo-logo" to="/">
-            <MartLogo className="logo-svg" />
+            <TfiShoppingCartFull className="logo-svg" />
           </Link>
+
           <div className="nav-links">
             <Link className="link" to="/shop">
               SHOP
@@ -31,9 +32,12 @@ const Navigation = () => {
                 SIGN IN
               </Link>)
             }
-            <Link className="link">
-              <Icon />
-            </Link>
+            <div className="shopping-bag">
+              <Link className="shop-cart">
+                <MdOutlineShoppingBag />
+              </Link>
+              <p className="num">1</p>
+            </div>
           </div>
         </div>
       </div>
