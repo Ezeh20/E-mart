@@ -1,7 +1,7 @@
 import { Outlet, Link } from "react-router-dom";
 import { Fragment, useContext } from "react";
 import { TfiShoppingCartFull } from "react-icons/tfi"
-import { MdOutlineShoppingBag } from "react-icons/md"
+import ShoppingCart from "../../Components/shopping-cart/shopping-cart";
 import { UserContext } from "../../Context/user.context";
 import { SignOut } from "../../utils/firebase/firebase.utils";
 
@@ -32,12 +32,7 @@ const Navigation = () => {
                 SIGN IN
               </Link>)
             }
-            <div className="shopping-bag">
-              <Link className="shop-cart">
-                <MdOutlineShoppingBag />
-              </Link>
-              <p className="num">1</p>
-            </div>
+            <ShoppingCart/>
           </div>
         </div>
       </div>
