@@ -1,0 +1,12 @@
+.checkout {
+    .checkoutContainer {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        width: 240px;
+        height: 340px;
+        .btn{
+            margin-top: auto;
+        }
+    }
+}

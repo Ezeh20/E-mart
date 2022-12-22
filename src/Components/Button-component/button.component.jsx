@@ -5,7 +5,8 @@ const Button_Class = {
     google: "google-sign-in",
     primary: "primary-btn",
     redirect: "redirect",
-    addToCart:"cart"
+    addToCart:"cart",
+    checkout:"checkout"
 }
 
 const Button = ({ children, buttonType, otherProps, onClick, link }) => {

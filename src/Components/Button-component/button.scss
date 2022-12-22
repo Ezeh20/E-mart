@@ -59,4 +59,19 @@
             border: 1px solid #000;
         }
     }
+
+    &.checkout {
+        font-size: 16px;
+        width: 100%;
+        background-color: #000;
+        border: 1px solid #000;
+        color: #fff;
+        border-radius: 0%;
+
+        &:hover {
+            background-color: #fff;
+            border: 1px solid #000;
+            color: #000;
+        }
+    }
 }

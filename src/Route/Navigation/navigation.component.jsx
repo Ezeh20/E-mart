@@ -2,6 +2,7 @@ import { Outlet, Link } from "react-router-dom";
 import { Fragment, useContext } from "react";
 import { TfiShoppingCartFull } from "react-icons/tfi"
 import ShoppingCart from "../../Components/shopping-cart/shopping-cart";
+import Checkout from "../../Components/Checkout-component/checkout-component";
 import { UserContext } from "../../Context/user.context";
 import { SignOut } from "../../utils/firebase/firebase.utils";
 
@@ -15,7 +16,7 @@ const Navigation = () => {
   return (
     <Fragment>
       <div className="nav-header">
-        <div className="nav-body container-two">
+        <div className="nav-body container-two ">
           <Link className="logo-logo" to="/">
             <TfiShoppingCartFull className="logo-svg" />
           </Link>
@@ -33,6 +34,9 @@ const Navigation = () => {
               </Link>)
             }
             <ShoppingCart />
+          </div>
+          <div className="checkoutB">
+            <Checkout />
           </div>
         </div>
       </div>
