@@ -32,7 +32,7 @@ const Navigation = () => {
                 SIGN IN
               </Link>)
             }
-            <ShoppingCart/>
+            <ShoppingCart />
           </div>
         </div>
       </div>

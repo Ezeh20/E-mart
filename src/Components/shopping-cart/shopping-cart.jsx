@@ -6,8 +6,10 @@ const ShoppingCart = () => {
     return (
         <div className="shop-con">
             <div className="shopping-bag">
-                <MdOutlineShoppingBag  className="shop-cart"/>
-                <span className="num">200</span>
+                <MdOutlineShoppingBag className="shop-cart" />
+                <div className="cart-count">
+                    <span className="num">20</span>
+                </div>
             </div>
         </div>
     )
