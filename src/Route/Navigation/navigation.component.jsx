@@ -4,6 +4,7 @@ import { TfiShoppingCartFull } from "react-icons/tfi"
 import ShoppingCart from "../../Components/shopping-cart/shopping-cart";
 import Checkout from "../../Components/Checkout-component/checkout-component";
 import { UserContext } from "../../Context/user.context";
+import { CartContext } from "../../Context/cartContext";
 import { SignOut } from "../../utils/firebase/firebase.utils";
 
 
@@ -12,6 +13,7 @@ import "./navigation.style.scss";
 const Navigation = () => {
   //get access to the currentUser state which may be updated at any time
   const { currentUser } = useContext(UserContext)
+  const { cartActive } = useContext(CartContext)
 
   return (
     <Fragment>
@@ -35,9 +37,11 @@ const Navigation = () => {
             }
             <ShoppingCart />
           </div>
-          <div className="checkoutB">
-            <Checkout />
-          </div>
+          {
+            cartActive && <div className="checkoutB">
+              <Checkout />
+            </div>
+          }
         </div>
       </div>
       <Outlet />

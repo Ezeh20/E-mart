@@ -62,7 +62,7 @@ const Signin = () => {
   return (
 
     <div className="sign_in up">
-      <div className="split container-three">
+      <div className="split container-form">
         <h2 className="title">Sign - in</h2>
         <Button className="goo" onClick={login} buttonType={`google`} >Sign - in with google</Button>
         <div className="spin">
@@ -72,7 +72,7 @@ const Signin = () => {
 
       </div>
 
-      <form className="form container-three" onSubmit={onSubmit} >
+      <form className="form container-form" onSubmit={onSubmit} >
         <FormInput label={`Email`} inputOptions={{
           type: "email",
           id: "email",

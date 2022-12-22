@@ -5,17 +5,25 @@
     list-style: none;
     text-decoration: none;
 }
+
 .container {
     max-width: 1300px;
     margin-left: 1rem;
     margin-right: 1rem;
 }
 
-.container-three{
+.container-three {
+    max-width: 1440px;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.container-form {
     max-width: 560px;
     margin-left: 1rem;
     margin-right: 1rem;
 }
+
 /*********************************************************************************/
 
 @media screen and (min-width : 1300px) {
@@ -23,8 +31,15 @@
         margin-left: auto;
         margin-right: auto;
     }
+
+    @media screen and (min-width : 1440px) {
+        .container-three {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
 }
 
-.inp{
+.inp {
     margin-bottom: 2rem;
 }

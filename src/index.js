@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { UserProvider } from "./Context/user.context";
 import { ProductProvider } from "./Context/product.context";
+import { CartContextProvider } from "./Context/cartContext";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
@@ -13,7 +14,9 @@ root.render(
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <UserProvider>
         <ProductProvider>
-          <App />
+          <CartContextProvider>
+            <App />
+          </CartContextProvider>
         </ProductProvider>
       </UserProvider>
     </BrowserRouter>
