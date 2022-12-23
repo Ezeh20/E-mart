@@ -1,8 +1,14 @@
 import "./Product.style.scss"
 import Button from "../Button-component/button.component"
+import { useContext } from "react"
+import { CartContext } from "../../Context/cartContext"
 
 const Products = ({ product }) => {
     const { name, imageUrl, price } = product
+
+    const { addItems } = useContext(CartContext)
+
+    const addItemsToCart = () => addItems(product)
     return (
         <>
             <div className="product-card">
@@ -12,7 +18,7 @@ const Products = ({ product }) => {
                     <span className="name">${price}</span>
                 </div>
                 <div className="pro_btn">
-                    <Button className="cart" buttonType={'addToCart'}>add to cart</Button>
+                    <Button className="cart" buttonType={'addToCart'} onClick={addItemsToCart}>add to cart</Button>
                 </div>
             </div>
         </>
