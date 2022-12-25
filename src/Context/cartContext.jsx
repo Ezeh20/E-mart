@@ -2,11 +2,13 @@ import { createContext, useState } from "react";
 
 
 const checkList = (cartList, productToAdd) => {
-    const exits = cartList.find((itm) => itm.id === productToAdd.id)
+    const exits = cartList.find((cart)=> cart.id === productToAdd.id)
+
+
 
     if (exits) {
-        return cartList.map((car) => car.id === productToAdd.id ?
-            { ...cartList, quantity: cartList.quantity + 1 } : cartList
+        return cartList.map((itm) => itm.id === productToAdd.id ?
+            { ...itm, quantity: itm.quantity + 1 } : itm
         );
     }
 
@@ -27,6 +29,8 @@ export const CartContextProvider = ({ children }) => {
     const addItems = (productToAdd) => {
         setCartList(checkList(cartList, productToAdd))
     }
+
+    
 
     const value = { cartActive, setCartActive, addItems, cartList }
     return <CartContext.Provider value={value}>{children}</CartContext.Provider>

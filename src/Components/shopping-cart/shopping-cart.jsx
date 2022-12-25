@@ -5,14 +5,15 @@ import "./shopping-cart.scss"
 
 
 const ShoppingCart = () => {
-    const { setCartActive } = useContext(CartContext)
+    const { setCartActive, cartList } = useContext(CartContext)
+    const bs = cartList.length
 
     return (
         <div className="shop-con">
             <div className="shopping-bag" onClick={() => setCartActive(current => !current)}>
                 <MdOutlineShoppingBag className="shop-cart" />
                 <div className="cart-count">
-                    <span className="num">0</span>
+                    <span className="num">{bs}</span>
                 </div>
             </div>
         </div>
