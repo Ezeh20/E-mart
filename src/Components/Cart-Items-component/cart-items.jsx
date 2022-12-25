@@ -4,10 +4,6 @@ import "./Cart-items.scss"
 
 const CartItems = ({ items }) => {
     const { name, imageUrl, price, quantity } = items
-    const priceCart = price * quantity
-
-  
-
    
     return (
         <div className="cartlist-list">
