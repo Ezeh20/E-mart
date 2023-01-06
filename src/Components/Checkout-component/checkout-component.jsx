@@ -1,12 +1,18 @@
 import Button from "../Button-component/button.component"
 import CartItems from "../Cart-Items-component/cart-items"
 import { useContext } from "react"
+import { useNavigate } from "react-router-dom"
 import { CartContext } from "../../Context/cartContext"
 import style from "./checkout.module.scss"
 
 const Checkout = () => {
 
     const { cartList } = useContext(CartContext)
+    const navigate = useNavigate()
+
+    const nav = () =>{
+        navigate("checkout")
+    }
     return (
         <div className={style.checkout}>
             <div className={style.checkoutContainer}>
@@ -16,7 +22,7 @@ const Checkout = () => {
                     }
                 </div>
                 <div className={style.btn}>
-                    <Button buttonType={`checkout`}>Move to checkout</Button>
+                    <Button buttonType={`checkout`} onClick={nav}>Move to checkout</Button>
                 </div>
             </div>
         </div>

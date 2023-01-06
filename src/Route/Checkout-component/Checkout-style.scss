@@ -1,0 +1,26 @@
+.con-top{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    place-items: center;
+    margin-top: 5rem;
+    row-gap: 1rem;
+    @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(2,1fr);
+    }
+    @media screen and (min-width: 1024px) {
+        grid-template-columns: repeat(3,1fr);
+    }
+    .heading{
+        .heading-title{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            .li{
+                width: 100px;
+                background-color: green;
+                align-items: center;
+            }
+        }
+    }
+}

@@ -4,6 +4,7 @@ import Home from "./Route/home/home.component";
 import Shop from "./Route/Shop/shop.component";
 import Signin from "./Route/Auth/sign-in/sign-in-component";
 import SignUp from "./Route/Auth/Sign-up-component/sign-up-component";
+import CheckoutPage from "./Route/Checkout-component/Checkout-component";
 import "./index.scss";
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="shop" element={<Shop />} />
         <Route path="signin" element={<Signin />} />
         <Route path="sign-up" element={<SignUp />} />
+        <Route path="checkout" element={<CheckoutPage />} />
       </Route>
     </Routes>
   );

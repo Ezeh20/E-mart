@@ -1,20 +1,21 @@
-.Shop{
+.Shop {
     width: 100%;
     min-height: 100vh;
     justify-content: center;
-  
-    .title{
+
+    .title {
         text-align: center;
         margin: 1rem 0;
     }
-    .products-container{
-        display: flex;
-        overflow: scroll;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-        column-gap: 1.5rem;
+
+    .products-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 350px));
+        justify-content: center;
+        gap: 1rem;
         padding: 1rem;
-        &::-webkit-scrollbar{
+
+        &::-webkit-scrollbar {
             display: none;
         }
     }

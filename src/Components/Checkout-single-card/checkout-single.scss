@@ -1,0 +1,26 @@
+.singles {
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    min-height: 100px;
+    max-width: 280px;
+    padding: 20px;
+
+
+
+    .img-singles {
+
+
+        .img-si {
+          width: 230px;
+           height: 300px;
+           object-fit: contain;
+        }
+    }
+
+    .content-singles {
+        .content-sin {
+            display: flex;
+        }
+    }
+}

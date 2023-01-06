@@ -9,15 +9,17 @@ const checkList = (cartList, productToAdd) => {
 
     //if an object with the same id exits, don't add that same product just increase the quantity by 1
     if (exits) {
+        //if true map through the cartList then check if any cartList item has the same id with the incoming item
+        //if it does, just keep that original item in the cartList but increase it's quantity by 1. 
         return cartList.map((itm) => itm.id === productToAdd.id ?
             { ...itm, quantity: itm.quantity + 1 } : itm
         );
     }
-
     //This is the case where the cartList does not contain the product to be added, just return an array
     //that holds the current contents in the cartList then add the new product object to the array list but add a new key to that obj then set it's value to 1 
     return [...cartList, { ...productToAdd, quantity: 1 }]
 }
+
 
 
 export const CartContext = createContext({
@@ -47,6 +49,6 @@ export const CartContextProvider = ({ children }) => {
 
 
 
-    const value = { cartActive, setCartActive, addItems, cartList, cartCount}
+    const value = { cartActive, setCartActive, addItems, cartList, cartCount }
     return <CartContext.Provider value={value}>{children}</CartContext.Provider>
 }
