@@ -1,11 +1,11 @@
 .con-top {
     display: flex;
     flex-direction: column;
-    margin-top: 1rem;
-    column-gap: 1rem;
-    row-gap: 2rem;
+    margin: 1rem 0;
+    gap: 1rem;
 
     @media screen and (min-width: 1300px) {
+        display: grid;
         grid-template-areas:
             "cart cart total"
         ;
@@ -14,6 +14,24 @@
 
     .items {
         grid-area: cart;
+        display: grid;
+        row-gap: .8rem;
+
+        @media screen and (min-width:1300px) {
+            row-gap: 0;
+        }
+
+        .cart {
+            margin-bottom: .5rem;
+
+            @media screen and (min-width:1300px) {
+                background-color: #fff;
+                margin-bottom: 0;
+                padding: 1rem;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+            }
+        }
     }
 
     .sub_total_top {
@@ -28,11 +46,13 @@
     }
 
     .sub_total_bottom {
+        height: max-content;
+
         @media screen and (min-width:13000px) {
             grid-area: total;
         }
 
-        background-color: green;
+        background-color:#fff;
     }
 
     .heading {
