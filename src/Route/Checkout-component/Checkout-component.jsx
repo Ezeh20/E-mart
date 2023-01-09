@@ -10,9 +10,20 @@ const CheckoutPage = () => {
 
     return (
         <div className="con-top container">
-            {
-                cartList.map((singles) => { return (<CheckoutSingle key={singles.id} singles={singles} />) })
-            }
+            <div className="sub_total_top">
+                <p className="subtotal">Subtotal</p>
+                <p className="price">#8800</p>
+            </div>
+            <div className="items">
+                {
+                    cartList.map((singles) => { return (<CheckoutSingle key={singles.id} singles={singles} />) })
+                }
+            </div>
+            <div className="sub_total_bottom">
+                <p className="subtotal">Subtotal</p>
+                <p className="price">#8800</p>
+            </div>
+
         </div>
     )
 }

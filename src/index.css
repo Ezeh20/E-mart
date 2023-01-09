@@ -1,14 +1,11 @@
-
-
 body {
   margin: 0;
   font-family: 'Mulish',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #eee;
-  background: rgba(255, 255, 255, 0.82)
-  
+  background-color: #F5F5F5;
+
 }
 
 code {
@@ -18,9 +15,9 @@ code {
 
 * {
   box-sizing: border-box;
-  
+
 }
 
-input[type='password']{
+input[type='password'] {
   letter-spacing: .3rem;
 }
