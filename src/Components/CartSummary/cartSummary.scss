@@ -1,0 +1,43 @@
+.sub_total_car {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem .7rem;
+    row-gap: 1rem;
+
+    .car_cart {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        display: none;
+
+        @media screen and (min-width:1300px) {
+            display: flex;
+        }
+    }
+
+    .sub_total {
+        display: flex;
+        flex-direction: column;
+        display: none;
+        row-gap: 1rem;
+
+        @media screen and (min-width:1300px) {
+            display: flex;
+        }
+
+        .sub_sub {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
+.line_checkout {
+    padding: 0;
+
+    .line_line {
+        width: 100%;
+        height: 1px;
+        background-color: #eee;
+    }
+}
