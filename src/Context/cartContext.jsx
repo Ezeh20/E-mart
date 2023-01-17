@@ -20,6 +20,20 @@ const checkList = (cartList, productToAdd) => {
     return [...cartList, { ...productToAdd, quantity: 1 }]
 }
 
+//decrese the product quantity
+const deQuanity = (cartList, productToDecrease) => {
+    const valid = cartList.find((productItem) => productItem.id === productToDecrease.id)
+
+    //while reducing, if the quantity is less than 1, remove that product
+    if (valid.quantity === 1) {
+        return cartList.filter((filterProduct) => filterProduct.id !== productToDecrease.id)
+    }
+
+    //reduce the quantity by 1
+    return cartList.map((mappedProducts) => mappedProducts.id === productToDecrease.id ?
+        { ...mappedProducts, quantity: mappedProducts.quantity - 1 } : mappedProducts)
+
+}
 
 
 export const CartContext = createContext({
@@ -27,18 +41,25 @@ export const CartContext = createContext({
     setCartActive: () => { },
     cartList: [],
     addItems: () => { },
-    cartCount: 0
+    decreaseQuanity: () => { },
+    cartCount: 0,
+    total: 0
 })
 
 export const CartContextProvider = ({ children }) => {
     const [cartActive, setCartActive] = useState(false)
     const [cartList, setCartList] = useState([])
     const [cartCount, setCartCount] = useState(0)
+    const [total, setTotal] = useState(0)
 
 
     //This will the be the function that set's the cartList after checking the conditions
     const addItems = (productToAdd) => {
         setCartList(checkList(cartList, productToAdd))
+    }
+
+    const decreaseQuanity = (productToDecrease) => {
+        setCartList(deQuanity(cartList, productToDecrease))
     }
 
     //count the items in the cartList, both the items and quantity
@@ -47,8 +68,14 @@ export const CartContextProvider = ({ children }) => {
         setCartCount(counts)
     }, [cartList])
 
+    //calculates the sub-total... useEffect was used to only recaculate only when the cartList updates
+    useEffect(() => {
+        const Total = cartList.reduce((total, cartList) => total + cartList.quantity * cartList.price, 0)
+        setTotal(Total)
+    }, [cartList])
 
 
-    const value = { cartActive, setCartActive, addItems, cartList, cartCount }
+
+    const value = { cartActive, setCartActive, addItems, cartList, cartCount, total, decreaseQuanity }
     return <CartContext.Provider value={value}>{children}</CartContext.Provider>
 }

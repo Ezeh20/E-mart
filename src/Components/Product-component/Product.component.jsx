@@ -19,7 +19,7 @@ const Products = ({ product }) => {
                         <span className="name">${price}</span>
                     </div>
                     <div className="pro_btn">
-                        <Button className="cart"  onClick={addItemsToCart}>add to cart</Button>
+                        <Button className="cart" onClick={addItemsToCart}>add to cart</Button>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,4 @@
 .checkout {
-    border: 1px solid #000;
 
     .checkoutContainer {
         padding: 1rem;
@@ -20,6 +19,10 @@
 
             &::-webkit-scrollbar {
                 display: none;
+            }
+
+            .empCart {
+                text-align: center;
             }
         }
 
