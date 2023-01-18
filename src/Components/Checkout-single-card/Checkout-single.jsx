@@ -2,13 +2,15 @@ import { useContext } from "react"
 import { CartContext } from "../../Context/cartContext"
 import "./checkout-single.scss"
 import { RiDeleteBin5Line } from 'react-icons/ri'
+import Button from "../Button-component/button.component"
 
 const CheckoutSingle = ({ singles }) => {
     const { name, imageUrl, price, quantity } = singles
-    const { addItems, decreaseQuanity } = useContext(CartContext)
+    const { addItems, decreaseQuanity, removeProduct } = useContext(CartContext)
 
     const increaseQuantity = () => addItems(singles)
     const decreaseQuantity = () => decreaseQuanity(singles)
+    const removePro = () => removeProduct(singles)
     return (
         <div className="singles">
             <div className="singles_top">
@@ -23,11 +25,11 @@ const CheckoutSingle = ({ singles }) => {
                 </div>
             </div>
             <div className="singles_bottom">
-                <RiDeleteBin5Line className="remove_item" />
+                <RiDeleteBin5Line className="remove_item" onClick={removePro} />
                 <div className="add_sub_item">
-                    <button className="ma minus" onClick={decreaseQuantity}>-</button>
+                    <Button buttonType={`addOrRemove`} onClick={decreaseQuantity}>-</Button>
                     <p className="quantity_I">{quantity}</p>
-                    <button className="ma add" onClick={increaseQuantity}>+</button>
+                    <Button buttonType={`addOrRemove`} onClick={increaseQuantity}>+</Button>
                 </div>
             </div>
         </div>

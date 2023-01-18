@@ -6,7 +6,8 @@ const Button_Class = {
     primary: "primary-btn",
     redirect: "redirect",
     addToCart:"cart",
-    checkout:"checkout"
+    checkout:"checkout",
+    addOrRemove:"addOrRemove"
 }
 
 const Button = ({ children, buttonType, otherProps, onClick, link }) => {

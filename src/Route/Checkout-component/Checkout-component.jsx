@@ -7,7 +7,9 @@ import { CartContext } from "../../Context/cartContext"
 
 const CheckoutPage = () => {
 
-    const { cartList, cartCount, total } = useContext(CartContext)
+    const { cartList, cartCount, total, clearAll } = useContext(CartContext)
+
+    const ccl = () => clearAll()
 
     return (
         <div className="con-top container">
@@ -17,7 +19,12 @@ const CheckoutPage = () => {
             </div>
             <div className="items">
                 <div className="cart">
-                    <p className="cart_numb">CART({cartCount})</p>
+                    <div className="cart_tt">
+                        <p className="cart_numb">CART({cartCount})</p>
+                        {
+                            cartList.length > 0 && <p onClick={ccl}>clearAll</p> 
+                        }
+                    </div>
                     {
                         cartList.length < 1 ? <p className="emptyCart">Your cart is empty</p> : ""
                     }

@@ -74,4 +74,16 @@
             color: #000;
         }
     }
+
+    &.addOrRemove {
+        font-size: 20px;
+        padding: .2rem .7rem;
+        background-color: #eee;
+        color: #000;
+        border: 1px solid #000;
+        &:hover{
+            color: #fff;
+            background-color: #000;
+        }
+    }
 }

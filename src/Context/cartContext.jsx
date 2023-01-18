@@ -32,9 +32,12 @@ const deQuanity = (cartList, productToDecrease) => {
     //reduce the quantity by 1
     return cartList.map((mappedProducts) => mappedProducts.id === productToDecrease.id ?
         { ...mappedProducts, quantity: mappedProducts.quantity - 1 } : mappedProducts)
-
 }
+//Remove/Delete product from cart
+const proToRemove = (cartList, productToRemove) => cartList.filter((removeThisProduct) => removeThisProduct.id !== productToRemove.id)
 
+//Clear all products
+const clear = (cartList) => cartList.filter((clearA) => clearA.id === -1)
 
 export const CartContext = createContext({
     cartActive: false,
@@ -42,6 +45,8 @@ export const CartContext = createContext({
     cartList: [],
     addItems: () => { },
     decreaseQuanity: () => { },
+    removeProduct: () => { },
+    clearAll: () => { },
     cartCount: 0,
     total: 0
 })
@@ -57,9 +62,17 @@ export const CartContextProvider = ({ children }) => {
     const addItems = (productToAdd) => {
         setCartList(checkList(cartList, productToAdd))
     }
-
+    //function to reduce product quantity in cart
     const decreaseQuanity = (productToDecrease) => {
         setCartList(deQuanity(cartList, productToDecrease))
+    }
+    //function to remove product from cart
+    const removeProduct = (productToRemove) => {
+        setCartList(proToRemove(cartList, productToRemove))
+    }
+    //function to clear all products in cart
+    const clearAll = () => {
+        setCartList(clear(cartList))
     }
 
     //count the items in the cartList, both the items and quantity
@@ -76,6 +89,6 @@ export const CartContextProvider = ({ children }) => {
 
 
 
-    const value = { cartActive, setCartActive, addItems, cartList, cartCount, total, decreaseQuanity }
+    const value = { cartActive, setCartActive, addItems, cartList, cartCount, total, decreaseQuanity, removeProduct, clearAll }
     return <CartContext.Provider value={value}>{children}</CartContext.Provider>
 }
