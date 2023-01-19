@@ -61,19 +61,28 @@ export const CartContextProvider = ({ children }) => {
     //This will the be the function that set's the cartList after checking the conditions
     const addItems = (productToAdd) => {
         setCartList(checkList(cartList, productToAdd))
+        localStorage.setItem('MyCart', JSON.stringify(checkList(cartList, productToAdd)))
     }
     //function to reduce product quantity in cart
     const decreaseQuanity = (productToDecrease) => {
         setCartList(deQuanity(cartList, productToDecrease))
+        localStorage.setItem('MyCart', JSON.stringify(deQuanity(cartList, productToDecrease)))
     }
     //function to remove product from cart
     const removeProduct = (productToRemove) => {
         setCartList(proToRemove(cartList, productToRemove))
+        localStorage.setItem('MyCart', JSON.stringify(proToRemove(cartList, productToRemove)))
     }
     //function to clear all products in cart
     const clearAll = () => {
         setCartList(clear(cartList))
+        localStorage.setItem('MyCart', JSON.stringify(clear(cartList)))
     }
+
+    //presist cart with product on page reload
+    useEffect(() => {
+        setCartList(localStorage.getItem('MyCart') ? JSON.parse(localStorage.getItem('MyCart')) : [])
+    }, [])
 
     //count the items in the cartList, both the items and quantity
     useEffect(() => {
