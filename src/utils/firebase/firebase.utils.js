@@ -65,7 +65,15 @@ export const uploadCollectionAndDocument = async (collectionName, dataToUpload) 
   //but in the case of a transcation that depends on two or more writes, just like a bank. For this transcation to be successfull, each write
   //must be successfull{ebuka transfers 1000 to tunde, the database should perform a write that removes 1000 from ebuka's balance.This is one write}
   //{tunde's balance should have +1000.This is another write}
-  //if for any reason either ebuka's write or tunde's fails, this transcation is said to be unsuccessfull. 
+  //if for any reason either ebuka's write or tunde's fails, this transcation is said to be unsuccessfull. although there are two writes happening here
+  //It still counts as 1 unit of work
+  const batch = writeBatch(database)
+  dataToUpload.forEach((object) => {
+    const docRef = doc(collectionRef, object.title.toLowerCase())
+    batch.set(docRef, object)
+  })
+  await batch.commit()
+  console.log('done')
 }
 
 //create users in the firestore database
