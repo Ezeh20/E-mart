@@ -1,16 +1,8 @@
-import { useContext } from "react"
-import { CartContext } from "../../Context/cartContext"
 import "./checkout-single.scss"
-import { RiDeleteBin5Line } from 'react-icons/ri'
-import Button from "../Button-component/button.component"
+import AddAlt from "../AddAlt/addAlt"
 
-const CheckoutSingle = ({ singles }) => {
-    const { name, imageUrl, price, quantity } = singles
-    const { addItems, decreaseQuanity, removeProduct } = useContext(CartContext)
-
-    const increaseQuantity = () => addItems(singles)
-    const decreaseQuantity = () => decreaseQuanity(singles)
-    const removePro = () => removeProduct(singles)
+const CheckoutSingle = ({ product }) => {
+    const { name, imageUrl, price } = product
     return (
         <div className="singles">
             <div className="singles_top">
@@ -24,14 +16,7 @@ const CheckoutSingle = ({ singles }) => {
                     </div>
                 </div>
             </div>
-            <div className="singles_bottom">
-                <RiDeleteBin5Line className="remove_item" onClick={removePro} />
-                <div className="add_sub_item">
-                    <Button buttonType={`addOrRemove`} onClick={decreaseQuantity}>-</Button>
-                    <p className="quantity_I">{quantity}</p>
-                    <Button buttonType={`addOrRemove`} onClick={increaseQuantity}>+</Button>
-                </div>
-            </div>
+            <AddAlt product={product}/>
         </div>
     )
 }

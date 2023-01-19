@@ -77,7 +77,7 @@ export const CartContextProvider = ({ children }) => {
 
     //count the items in the cartList, both the items and quantity
     useEffect(() => {
-        const counts = cartList.reduce((total, cartList) => total + cartList.quantity, 0)
+        const counts = cartList.reduce((total, cartist) => total + cartist.quantity, 0)
         setCartCount(counts)
     }, [cartList])
 

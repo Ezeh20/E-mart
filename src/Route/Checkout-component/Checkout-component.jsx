@@ -1,7 +1,6 @@
 import "./Checkout-style.scss"
 import CheckoutSingle from "../../Components/Checkout-single-card/Checkout-single"
 import CartSummary from "../../Components/CartSummary/cartSummary"
-
 import { useContext } from "react"
 import { CartContext } from "../../Context/cartContext"
 
@@ -22,7 +21,7 @@ const CheckoutPage = () => {
                     <div className="cart_tt">
                         <p className="cart_numb">CART({cartCount})</p>
                         {
-                            cartList.length > 0 && <p onClick={ccl}>clearAll</p> 
+                            cartList.length > 0 && <p className="click" onClick={ccl}>clearAll</p>
                         }
                     </div>
                     {
@@ -30,7 +29,7 @@ const CheckoutPage = () => {
                     }
                 </div>
                 {
-                    cartList.map((singles) => { return (<CheckoutSingle key={singles.id} singles={singles} />) })
+                    cartList.map((product) => { return (<CheckoutSingle key={product.id} product={product} />) })
                 }
             </div>
             <div className="sub_total_bottom">

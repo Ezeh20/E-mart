@@ -7,7 +7,8 @@ const Button_Class = {
     redirect: "redirect",
     addToCart:"cart",
     checkout:"checkout",
-    addOrRemove:"addOrRemove"
+    addOrRemove:"addOrRemove",
+    btnCard:"btnCard"
 }
 
 const Button = ({ children, buttonType, otherProps, onClick, link }) => {

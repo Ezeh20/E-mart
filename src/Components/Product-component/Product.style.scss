@@ -21,6 +21,7 @@
         flex-direction: column;
         row-gap: 1rem;
         padding: 1rem;
+
         .product_details {
             margin-top: 1rem;
             display: flex;
@@ -36,8 +37,11 @@
             .cart {
                 @media screen and (min-width:1024px) {
                     bottom: 25%;
+                    display: flex;
                 }
             }
+
+           
         }
     }
 

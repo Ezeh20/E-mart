@@ -31,15 +31,24 @@
                 border-top-left-radius: 5px;
                 border-top-right-radius: 5px;
             }
-            .cart_tt{
+
+            .cart_tt {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+
+                .click {
+                    &:hover {
+                        cursor: pointer;
+                        color: red;
+                    }
+                }
             }
 
             .emptyCart {
                 color: red;
                 text-align: center;
+
                 @media screen and (min-width:1300px) {
                     margin-top: 3rem;
                 }
