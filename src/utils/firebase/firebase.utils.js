@@ -22,7 +22,7 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 
-import { getFirestore, doc, getDoc, setDoc, collection, writeBatch } from "firebase/firestore";
+import { getFirestore, doc, getDoc, setDoc, collection, writeBatch, query, getDocs } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBsceErr2hLydyVnzNf8cPDeGC_iBpyAII",
@@ -73,7 +73,24 @@ export const uploadCollectionAndDocument = async (collectionName, dataToUpload) 
     batch.set(docRef, object)
   })
   await batch.commit()
-  console.log('done')
+}
+
+//This function calls the collection we just uploaded to our firestore
+export const downloadCollectionAndDocument = async () => {
+  //get the collection Ref as it is in the database
+  const collectRef = collection(database, "Categories")
+  //query our collectionREf
+  const q = query(collectRef)
+  //then get the snapShot of that collection
+  const collectionSnapShot = await getDocs(q)
+
+  //that snapShop will then return an array that can be reduced to build out our map
+  const snapShotMap = collectionSnapShot.docs.reduce((acc, documentsSnapShot) => {
+    const { title, items } = documentsSnapShot.data()
+    acc[title.toLowerCase()] = items
+    return acc
+  }, {})
+  return snapShotMap
 }
 
 //create users in the firestore database

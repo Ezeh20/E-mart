@@ -1,18 +1,22 @@
 import { createContext, useState, useEffect } from "react"
-import { uploadCollectionAndDocument } from "../utils/firebase/firebase.utils"
-import SHOP_DATA from "../shop-data"
+import { downloadCollectionAndDocument } from "../utils/firebase/firebase.utils"
+
 
 
 export const ProductContext = createContext({
-    product: []
+    categories: {}
 })
 
 
 export const ProductProvider = ({ children }) => {
+    const [categories, setCategories] = useState({})
     useEffect(() => {
-        uploadCollectionAndDocument("Categories", SHOP_DATA)
+        const categoriesMap = async () => {
+            const categories = downloadCollectionAndDocument()
+            setCategories(categories)
+        }
+        categoriesMap()
     }, [])
-    const [product, setProduct] = useState([])
-    const value = { product, setProduct }
+    const value = { categories, setCategories }
     return <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
 }
