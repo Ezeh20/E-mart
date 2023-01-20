@@ -1,22 +1,20 @@
 .Shop {
     width: 100%;
     min-height: 100vh;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    margin-top: 1rem;
     row-gap: 4rem;
+    padding: 1.5rem 0;
 
 
-    .abff {
+    .af {
         display: flex;
         flex-direction: column;
-        row-gap: 1rem;
+        row-gap: 2rem;
+        padding: 2rem  0;
         // text-align: center;
 
         .products-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 1rem;
 
             @media screen and (max-width: 350px) {

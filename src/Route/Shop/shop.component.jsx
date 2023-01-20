@@ -11,11 +11,11 @@ const Shop = () => {
     <div className="Shop">
       {
         Object.keys(categories).map(title => {
-          
+
           return (
-            <div key={title} className="abff">
-              <h2 className='container-three'>{title}</h2>
-              <div className="products-container  container-three">
+            <div key={title} className="af container-three">
+              <h2 className='title-tit'>{title}</h2>
+              <div className="products-container ">
                 {
                   categories[title].map(pro => { return (<Products key={pro.id} product={pro} />) })
                 }

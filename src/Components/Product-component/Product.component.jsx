@@ -17,7 +17,7 @@ const Products = ({ product }) => {
                 <div className="proo">
                     <div className="product_details">
                         <span className="name">{
-                        name.length > 10 ? name.slice(0, 10) + '...' : name}</span>
+                        name.length > 12 ? name.slice(0, 10) + '...' : name}</span>
                         <span className="name">${price}</span>
                     </div>
                     <div className="pro_btn">
