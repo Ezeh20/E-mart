@@ -4,12 +4,12 @@ import { useContext } from "react"
 import { CartContext } from "../../Context/cartContext"
 import AddOrSub from "../Add-Decrease_quantity/addOrSub"
 
-const Products = ({ product }) => {
-    const { name, imageUrl, price, id } = product
+const Products = ({ pro }) => {
+    const { name, imageUrl, price, id } = pro
     const { addItems, cartList } = useContext(CartContext)
     const itm = cartList.find((x) => x.id === id)
     
-    const addItemsToCart = () => addItems(product)
+    const addItemsToCart = () => addItems(pro)
     return (
         <>
             <div className="product-card">
@@ -23,7 +23,7 @@ const Products = ({ product }) => {
                     <div className="pro_btn">
                         {
                             itm ? (
-                                <AddOrSub product={product} itm={itm} />
+                                <AddOrSub product={pro} itm={itm} />
                             ) : <Button className={`cart`} onClick={addItemsToCart}>add to cart</Button>
                         }
                     </div>

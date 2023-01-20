@@ -1,0 +1,27 @@
+.categories-pre {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 2rem 0;
+    // text-align: center;
+    .title-tit{
+        &:hover{
+            cursor: pointer;
+            color: #999;
+        }
+    }
+
+    .products-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1rem;
+
+        @media screen and (max-width: 350px) {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}

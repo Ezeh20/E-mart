@@ -5,25 +5,4 @@
     padding: 1.5rem 0;
 
 
-    .af {
-        display: flex;
-        flex-direction: column;
-        row-gap: 2rem;
-        padding: 2rem  0;
-        // text-align: center;
-
-        .products-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1rem;
-
-            @media screen and (max-width: 350px) {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            }
-
-            &::-webkit-scrollbar {
-                display: none;
-            }
-        }
-    }
 }
