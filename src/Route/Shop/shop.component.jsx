@@ -6,15 +6,23 @@ import './shop.scss'
 
 
 const Shop = () => {
-  const { product } = useContext(ProductContext)
+  const { categories } = useContext(ProductContext)
   return (
     <div className="Shop">
-      <h1 className="title">Shop</h1>
-      <div className="products-container container-three">
-          {
-            product.map(pro => { return (<Products key={pro.id} product={pro} />) })
-          }
-      </div>
+      {
+        Object.keys(categories).map(title => {
+          return (
+            <div className="container-three abff">
+              <h2>{title}</h2>
+              <div className="products-container container-three">
+                {
+                  categories[title].map(pro => { return (<Products key={pro.id} product={pro} />) })
+                }
+              </div>
+            </div>)
+        })
+      }
+
     </div>
   )
 };

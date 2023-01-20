@@ -86,11 +86,11 @@ export const downloadCollectionAndDocument = async () => {
 
   //that snapShop will then return an array that can be reduced to build out our map
   const snapShotMap = collectionSnapShot.docs.reduce((acc, documentsSnapShot) => {
-    const { title, items } = documentsSnapShot.data()
-    acc[title.toLowerCase()] = items
-    return acc
+    const { title, items } = documentsSnapShot.data();
+    acc[title.toLowerCase()] = items;
+    return acc;
   }, {})
-  return snapShotMap
+  return snapShotMap;
 }
 
 //create users in the firestore database

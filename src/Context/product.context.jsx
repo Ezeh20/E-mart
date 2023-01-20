@@ -12,8 +12,8 @@ export const ProductProvider = ({ children }) => {
     const [categories, setCategories] = useState({})
     useEffect(() => {
         const categoriesMap = async () => {
-            const categories = downloadCollectionAndDocument()
-            setCategories(categories)
+            const categoriesMap = await downloadCollectionAndDocument()
+            setCategories(categoriesMap)
         }
         categoriesMap()
     }, [])
