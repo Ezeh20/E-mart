@@ -10,7 +10,7 @@
         row-gap: 1rem;
         display: none;
 
-        @media screen and (min-width:1300px) {
+        @media screen and (min-width:768px) {
             display: flex;
         }
     }
@@ -21,7 +21,7 @@
         display: none;
         row-gap: 1rem;
 
-        @media screen and (min-width:1300px) {
+        @media screen and (min-width:768px) {
             display: flex;
         }
 

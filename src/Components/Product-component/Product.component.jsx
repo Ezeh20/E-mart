@@ -16,7 +16,8 @@ const Products = ({ product }) => {
                 <img src={imageUrl} alt={`${name}`} className="product-img" />
                 <div className="proo">
                     <div className="product_details">
-                        <span className="name">{name}</span>
+                        <span className="name">{
+                        name.length > 10 ? name.slice(0, 10) + '...' : name}</span>
                         <span className="name">${price}</span>
                     </div>
                     <div className="pro_btn">

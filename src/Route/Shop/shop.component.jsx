@@ -11,10 +11,11 @@ const Shop = () => {
     <div className="Shop">
       {
         Object.keys(categories).map(title => {
+          
           return (
-            <div className="container-three abff">
-              <h2>{title}</h2>
-              <div className="products-container container-three">
+            <div key={title} className="abff">
+              <h2 className='container-three'>{title}</h2>
+              <div className="products-container  container-three">
                 {
                   categories[title].map(pro => { return (<Products key={pro.id} product={pro} />) })
                 }
@@ -28,3 +29,4 @@ const Shop = () => {
 };
 
 export default Shop
+

@@ -4,7 +4,7 @@
     margin: 1rem 0;
     gap: 1rem;
 
-    @media screen and (min-width: 1300px) {
+    @media screen and (min-width: 768px) {
         display: grid;
         grid-template-areas:
             "cart cart total"
@@ -24,7 +24,7 @@
         .cart {
             margin-bottom: .5rem;
 
-            @media screen and (min-width:1300px) {
+            @media screen and (min-width:768px) {
                 background-color: #fff;
                 margin-bottom: 0;
                 padding: 1rem;
@@ -65,7 +65,7 @@
         position: sticky;
         top: 5.5rem;
 
-        @media screen and (min-width:1300px) {
+        @media screen and (min-width:768px) {
             display: none;
         }
     }
@@ -73,7 +73,7 @@
     .sub_total_bottom {
         height: max-content;
 
-        @media screen and (min-width:13000px) {
+        @media screen and (min-width:1300px) {
             grid-area: total;
         }
 
