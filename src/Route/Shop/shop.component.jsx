@@ -9,14 +9,7 @@ const Shop = () => {
   const { categories } = useContext(ProductContext)
   return (
     <div className="Shop">
-      {
-        Object.keys(categories).map(title => {
-          const products = categories[title]
-          return (
-            <CategoriesPreview products={products} title={title} />
-          )
-        })
-      }
+     
     </div>
 
   )
