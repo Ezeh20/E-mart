@@ -7,7 +7,7 @@ const Categories = () => {
     <div  className="categories">
       <div className="wrapper container">
         {categories.map((cat) =>  { 
-          return <Category key={cat.id} category={cat} />;
+          return <Category key={cat.id} cat={cat} />;
         })}
       </div>
     </div>

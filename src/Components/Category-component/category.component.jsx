@@ -1,7 +1,7 @@
 import "./category.scss";
 
-const Category = (props) => {
-  const { img, title } = props.category;
+const Category = ({cat}) => {
+  const { img, title } = cat;
   return (
     <div  className="category ">
       <div
