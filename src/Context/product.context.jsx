@@ -4,7 +4,7 @@ import { downloadCollectionAndDocument } from "../utils/firebase/firebase.utils"
 
 
 export const ProductContext = createContext({
-    categories: {}
+    categories: {},
 })
 
 
@@ -17,6 +17,6 @@ export const ProductProvider = ({ children }) => {
         }
         categoriesMap()
     }, [])
-    const value = { categories, setCategories }
+    const value = { categories, setCategories}
     return <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
 }

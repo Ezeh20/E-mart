@@ -9,8 +9,9 @@ const CategoriesPreviewRoute = () => {
         <div className="Shop">
             {
                 Object.keys(categories).map(title => {
+
                     const products = categories[title]
-                   
+
                     return (
                         <CategoriesPreview key={title} products={products} title={title} />
                     )

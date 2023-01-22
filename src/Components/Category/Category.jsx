@@ -7,7 +7,7 @@ const CategoryO = () => {
     const { category } = useParams()
     const { categories } = useContext(ProductContext)
     const [products, setProducts] = useState([])
-   
+
     useEffect(() => {
         setProducts(categories[category])
     }, [categories, category])
@@ -18,7 +18,7 @@ const CategoryO = () => {
             </h2>
             <div className="products-container ">
                 {
-                    products && products.map((pro) => <Products key={pro.id} pro={pro} />)
+                    products && products.sort(() => Math.random() - 0.5).map((pro) => <Products key={pro.id} pro={pro} />)
                 }
             </div>
 
