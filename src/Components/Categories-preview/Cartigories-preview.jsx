@@ -15,7 +15,7 @@ const CategoriesPreview = ({ title, products }) => {
             </h2>
             <div className="products-container ">
                 {
-                    products.filter((_, index) => index < 4).sort(()=> Math.random() - 0.5).map((pro) => <Products key={pro.id} title={title} pro={pro} />)
+                    products.filter((_, index) => index < 4).sort(()=> Math.random() - 0.5).map((pro) => <Products key={pro.id} pro={pro} />)
                 }
             </div>
 
