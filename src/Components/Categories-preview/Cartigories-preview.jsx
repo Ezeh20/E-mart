@@ -1,4 +1,5 @@
-import './categories.style.scss'
+import './categories.style.jsx'
+import { CategoriesPre, ContainerThree, ProductsContainer, Tittle } from './categories.style.jsx'
 import { useNavigate } from 'react-router-dom'
 import Products from '../Product-component/Product.component'
 
@@ -9,17 +10,18 @@ const CategoriesPreview = ({ title, products }) => {
         navigate(title)
     }
     return (
-        <div className="categories-pre container-three">
-            <h2 className='title-tit'>
-                <span onClick={nav}>{title.toUpperCase()}</span>
-            </h2>
-            <div className="products-container ">
-                {
-                    products.filter((_, index) => index < 4).sort(()=> Math.random() - 0.5).map((pro) => <Products key={pro.id} pro={pro} />)
-                }
-            </div>
-
-        </div>
+        <CategoriesPre>
+            <ContainerThree>
+                <Tittle>
+                    <span onClick={nav}>{title.toUpperCase()}</span>
+                </Tittle>
+                <ProductsContainer>
+                    {
+                        products.filter((_, index) => index < 4).sort(() => Math.random() - 0.5).map((pro) => <Products key={pro.id} pro={pro} />)
+                    }
+                </ProductsContainer>
+            </ContainerThree>
+        </CategoriesPre>
     )
 }
 
