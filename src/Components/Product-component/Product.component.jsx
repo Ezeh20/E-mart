@@ -1,4 +1,5 @@
-import "./Product.style.scss"
+import "./Product.style.jsx"
+import { ProductCard, ProductImg, Proo, ProductDetails, ProBtn } from "./Product.style.jsx"
 import Button from "../Button-component/button.component"
 import { useContext } from "react"
 import { CartContext } from "../../Context/cartContext"
@@ -23,24 +24,24 @@ const Products = ({ pro }) => {
 
     return (
         <>
-            <div className="product-card">
-                <img src={imageUrl} alt={`${name}`} className="product-img"  onClick={nav}/>
-                <div className="proo">
-                    <div className="product_details">
+            <ProductCard>
+                <ProductImg src={imageUrl} alt={`${name}`} className="product-img" onClick={nav} />
+                <Proo>
+                    <ProductDetails>
                         <span className="name">{
                             name.length > 12 ? name.slice(0, 10) + '...' : name}</span>
                         <span className="name">${price}</span>
-                    </div>
-                    <div className="pro_btn">
+                    </ProductDetails>
+                    <ProBtn>
                         {
                             itm ? (
                                 <AddOrSub product={pro} itm={itm} />
-                            ) : <Button className={`cart`} onClick={addItemsToCart}>add to cart</Button>
+                            ) : <Button onClick={addItemsToCart}>add to cart</Button>
                         }
-                    </div>
-                </div>
+                    </ProBtn>
+                </Proo>
 
-            </div>
+            </ProductCard>
 
         </>
     )
