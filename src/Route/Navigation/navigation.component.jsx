@@ -1,4 +1,4 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { Fragment, useContext } from "react";
 import { TfiShoppingCartFull } from "react-icons/tfi"
 import ShoppingCart from "../../Components/shopping-cart/shopping-cart";
@@ -36,7 +36,6 @@ const Navigation = () => {
               <Checkout />
             </CheckoutB>
           }
-
         </NavBody>
       </NavHeader>
       <Outlet />
