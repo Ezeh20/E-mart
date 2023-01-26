@@ -6,9 +6,7 @@ import Checkout from "../../Components/Checkout-component/checkout-component";
 import { UserContext } from "../../Context/user.context";
 import { CartContext } from "../../Context/cartContext";
 import { SignOut } from "../../utils/firebase/firebase.utils";
-
-
-import "./navigation.style.scss";
+import { NavHeader, NavBody, LogoSvg, NavLinks, Links, CheckoutB } from "./navigation.style";
 
 const Navigation = () => {
   //get access to the currentUser state which may be updated at any time
@@ -17,30 +15,30 @@ const Navigation = () => {
 
   return (
     <Fragment>
-      <div className="nav-header">
-        <div className="nav-body container-two ">
-          <Link className="logo-logo" to="/">
-            <TfiShoppingCartFull className="logo-svg" />
-          </Link>
-
-          <div className="nav-links">
-            <Link className="link" to="/shop">
+      <NavHeader>
+        <NavBody>
+          <LogoSvg to="/">
+            <TfiShoppingCartFull />
+          </LogoSvg>
+          <NavLinks>
+            <Links to="/shop">
               SHOP
-            </Link>
+            </Links>
             {
-              currentUser ? (<span className="link" onClick={SignOut}>SIGN OUT</span>) : (<Link className="link" to="/signin">
+              currentUser ? (<Links as={`span`} onClick={SignOut}>SIGN OUT</Links>) : (<Links className="link" to="/signin">
                 SIGN IN
-              </Link>)
+              </Links>)
             }
             <ShoppingCart />
-          </div>
+          </NavLinks>
           {
-            cartActive && <div className="checkoutB">
+            cartActive && <CheckoutB>
               <Checkout />
-            </div>
+            </CheckoutB>
           }
-        </div>
-      </div>
+
+        </NavBody>
+      </NavHeader>
       <Outlet />
     </Fragment>
   );
