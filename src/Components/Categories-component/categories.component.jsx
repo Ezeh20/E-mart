@@ -4,9 +4,9 @@ import "./categories.scss";
 
 const Categories = () => {
   return (
-    <div  className="categories">
-      <div className="wrapper container">
-        {categories.map((cat) =>  { 
+    <div className="categories">
+      <div className="wrapper">
+        {categories.map((cat) => {
           return <Category key={cat.id} cat={cat} />;
         })}
       </div>

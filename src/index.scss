@@ -7,15 +7,15 @@
 }
 
 .container {
-    max-width: 1300px;
+    max-width: 1600px;
     margin-left: 1rem;
     margin-right: 1rem;
 
-    @media screen and (min-width : 1300px) {
+    @media screen and (min-width : 1600px) {
         margin-left: auto;
         margin-right: auto;
     }
-
+}
 
     .container-three {
         max-width: 1440px;
@@ -26,30 +26,8 @@
         }
     }
 
-
-    .container-form {
-        max-width: 560px;
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
-
-
-    @media screen and (min-width : 1300px) {
-        .container {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        @media screen and (min-width : 1442px) {
-
-            .container-three,
-            .container-title {
-                margin-inline: auto;
-            }
-        }
-    }
-
-    .inp {
-        margin-bottom: 2rem;
-    }
+    
+.container-form {
+    max-width: 560px;   
 }
+

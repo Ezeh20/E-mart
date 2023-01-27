@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import Products from '../Product-component/Product.component'
 
 const CategoriesPreview = ({ title, products }) => {
-
+console.log(title)
     const navigate = useNavigate()
     const nav = () => {
         navigate(title)

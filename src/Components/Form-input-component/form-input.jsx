@@ -4,7 +4,7 @@ const FormInput = ({ label,  inputOptions }) => {
     return (
         <div className='sign_up'>
             <div className="sign_up_container ">
-                <input className="form-input" {...inputOptions} />
+                <input  {...inputOptions} />
                 <label className={`${inputOptions.value.length ? 'shrink' : ''} field-label`}>{label}</label>
             </div>
         </div>
